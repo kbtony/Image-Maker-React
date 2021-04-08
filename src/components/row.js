@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Pixel from "./pixel";
+import "../styles/row.scss";
 
-export default function Line(props) {
+
+export default function Row(props) {
   const { width } = props;
 
   let pixels = [];
@@ -11,6 +13,6 @@ export default function Line(props) {
   }
 
   return (
-    <div className="line">{pixels}</div>
+    <div className="row">{pixels}</div>
   )
 }

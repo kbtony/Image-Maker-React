@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../styles/editor.scss";
 import Canvas from "./canvas";
 
 export default function Editor() {
@@ -14,7 +15,7 @@ export default function Editor() {
 
     buttonText === "Create Image" ? setButtonText("Reset") : setButtonText("Create Image");
   }
-  
+
   return (
     <div id="editor">
       <h1>Image</h1>
@@ -41,8 +42,7 @@ export default function Editor() {
       </div>)}
 
       <button onClick={initialize} className="button">{buttonText}</button>
-
-      <Canvas width={panelWidth} height={panelHeight}/>
+      {hideOptions && (<Canvas width={panelWidth} height={panelHeight} />)}
     </div>
   )
 }

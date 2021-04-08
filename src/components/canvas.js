@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Line from "./line"
+import "../styles/canvas.scss";
+import Row from "./row"
 
 export default function Canvas(props) {
   const { width, height } = props;
@@ -7,12 +8,11 @@ export default function Canvas(props) {
   let rows = [];
 
   for (let i = 0; i < height; i++) {
-    rows.push(<Line key={i} width={width}/>);
+    rows.push(<Row key={i} width={width}/>);
   }
 
   return (
     <div id="canvas">
-      <h1>haha</h1>
       <div id="pixels">
         {rows}
       </div>
