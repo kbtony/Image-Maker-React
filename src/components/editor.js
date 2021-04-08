@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Canvas from "./canvas";
 
 export default function Editor() {
   const [panelWidth, setPanelWidth] = useState(128);
@@ -15,7 +16,7 @@ export default function Editor() {
   }
   
   return (
-    <div id="canvas">
+    <div id="editor">
       <h1>Image</h1>
       {hideDrawingPanel && <h2>Enter Panel Dimensions</h2>}
       {hideDrawingPanel && (<div id="options">
@@ -40,6 +41,8 @@ export default function Editor() {
       </div>)}
 
       <button onClick={initialize} className="button">{buttonText}</button>
+
+      <Canvas width={panelWidth} height={panelHeight}/>
     </div>
   )
 }
