@@ -1,50 +1,50 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import "../styles/editor.scss";
 import Canvas from "./canvas";
 
 export default function Editor() {
-  const [panelWidth, setPanelWidth] = useState(128);
-  const [panelHeight, setPanelHeight] = useState(256);
+  const [canvasWidth, setCanvasWidth] = useState(128);
+  const [canvasHeight, setCanvasHeight] = useState(256);
   const [hideOptions, setHideOptions] = useState(false);
-  const [hideDrawingPanel, setHideDrawingPanel] = useState(true);
+  const [hideCanvas, setHideCanvas] = useState(true);
   const [buttonText, setButtonText] = useState("Create Image");
 
   function initialize() {
     setHideOptions(!hideOptions);
-    setHideDrawingPanel(!hideDrawingPanel);
+    setHideCanvas(!hideCanvas);
 
     buttonText === "Create Image" ? setButtonText("Reset") : setButtonText("Create Image");
   }
 
   return (
     <div id="editor">
-      <h1>Image</h1>
-      {hideDrawingPanel && <h2>Enter Panel Dimensions</h2>}
-      {hideDrawingPanel && (<div id="options">
-        <div className="option">
-          <input
-            type="number"
-            className="panelInput"
-            defaultValue={panelWidth}
-            onChange={(e) => { setPanelWidth(e.target.value) }}
-          />
-          <span>Width</span>
+      <h1>Image Maker</h1>
+      {hideCanvas && <h2>Enter Image Dimensions</h2>}
+      {hideCanvas && (
+        <div id="options">
+          <div className="option">
+            <input
+              type="number"
+              className="panelInput"
+              defaultValue={canvasWidth}
+              onChange={(e) => { setCanvasWidth(e.target.value) }}
+            />
+            <span>Width</span>
+          </div>
+          <div className="option">
+            <input
+              type="number"
+              className="panelInput"
+              defaultValue={canvasHeight}
+              onChange={(e) => { setCanvasHeight(e.target.value) }}
+            />
+            <span>Height</span>
+          </div>
         </div>
-        <div className="option">
-          <input
-            type="number"
-            className="panelInput"
-            defaultValue={panelHeight}
-            onChange={(e) => { setPanelHeight(e.target.value) }}
-          />
-          <span>Height</span>
-        </div>
-      </div>)}
+      )}
 
       <button onClick={initialize} className="button">{buttonText}</button>
-      {hideOptions && (<Canvas width={panelWidth} height={panelHeight} />)}
+      {hideOptions && (<Canvas width={canvasWidth} height={canvasHeight} />)}
     </div>
-  )
+  );
 }
-
-
