@@ -28,7 +28,7 @@ Valid inputs are required to generate an image.
     ├── src              
     │    ├── index.js
     │    ├── App.js
-    │    ├── styles               # Sass file          
+    │    ├── styles               # Sass files          
     │    └── components           # Component files
     │           
     └── public

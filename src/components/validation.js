@@ -16,7 +16,7 @@ export default function Validation(canvasWidth, canvasHeight) {
 
   if (Object.keys(errors).length === 0) {
     if (+canvasWidth * +canvasHeight !== 32768) {
-      errors.area = "The multiplication of Width and Height is not equal to 32768";
+      errors.area = "The multiplication of Width and Height is not equal to 32,768";
     } 
   }
   
