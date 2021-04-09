@@ -1,6 +1,7 @@
 import "../styles/editor.scss";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Canvas from "./canvas";
+import Validation from "./validation"
 
 export default function Editor() {
   const [canvasWidth, setCanvasWidth] = useState(128);
@@ -8,17 +9,25 @@ export default function Editor() {
   const [hideOptions, setHideOptions] = useState(false);
   const [hideCanvas, setHideCanvas] = useState(true);
   const [buttonText, setButtonText] = useState("Create Image");
+  // validate input
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   function initialize() {
-
-    // validat input
-    if (canvasWidth * canvasHeight != 32768) alert("Your age must be a number");
-
-    setHideOptions(!hideOptions);
-    setHideCanvas(!hideCanvas);
-
-    buttonText === "Create Image" ? setButtonText("Reset") : setButtonText("Create Image");
+    setErrors(Validation(canvasWidth, canvasHeight))
+    setIsSubmitting(true);
   }
+
+  useEffect(
+    () => {
+      if (Object.keys(errors).length === 0 && isSubmitting) {
+        setHideOptions(!hideOptions);
+        setHideCanvas(!hideCanvas);
+        buttonText === "Create Image" ? setButtonText("Reset") : setButtonText("Create Image");
+      }
+    },
+    [errors]
+  );
 
   return (
     <div id="editor">
@@ -34,6 +43,7 @@ export default function Editor() {
               onChange={(e) => { setCanvasWidth(e.target.value) }}
             />
             <span>Width</span>
+            {errors.canvasWidth && <p>{errors.canvasWidth}</p>}
           </div>
           <div className="option">
             <input
@@ -43,9 +53,11 @@ export default function Editor() {
               onChange={(e) => { setCanvasHeight(e.target.value) }}
             />
             <span>Height</span>
+            {errors.canvasHeight && <p>{errors.canvasHeight}</p>}
           </div>
         </div>
       )}
+      {errors.area && <p>{errors.area}</p>}
 
       <button onClick={initialize} className="button">{buttonText}</button>
       {hideOptions && (<Canvas width={canvasWidth} height={canvasHeight} />)}
