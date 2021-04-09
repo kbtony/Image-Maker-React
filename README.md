@@ -3,7 +3,7 @@ A **single-page web application** that generates an image with customized size u
 ## Overview
 This app is built with **React** and deployed to **Heroku**. The quick guide is as follows:  
 * **Width:** It allows users to customize the **width** of the image.
-* **Height:** It allows users to customize the **Height** of the image.
+* **Height:** It allows users to customize the **height** of the image.
 * **CREATE IMAGE:** Generate an image based on user input data.
 * **RESET:** It allows users to **reset** the width and height.
 <p align="center">
@@ -12,7 +12,7 @@ This app is built with **React** and deployed to **Heroku**. The quick guide is 
 </p>
 
 ## Error Handling
-Both
+Valid inputs are required to generate an image.
 <p align="center">
   <img src="./public/demo3.png">
   <img src="./public/demo4.png">
