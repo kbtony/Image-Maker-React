@@ -7,7 +7,7 @@ This app is built with **React** and deployed to **Heroku**. The quick guide is 
 * **CREATE IMAGE:** Generate an image based on user input data.
 * **RESET:** It allows users to **reset** the width and height.
 
-![](./public/demo1.png)![](./public/demo2.png)
+![](./public/demo1.png)    ![](./public/demo2.png)
 
 <!--
 <img src="react_frontend/public/demo.png" width="50" height="25">  
