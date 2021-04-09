@@ -43,7 +43,7 @@ export default function Editor() {
               onChange={(e) => { setCanvasWidth(e.target.value) }}
             />
             <span>Width</span>
-            {errors.canvasWidth && <p>{errors.canvasWidth}</p>}
+            {errors.canvasWidth && <p id="warning">{errors.canvasWidth}</p>}
           </div>
           <div className="option">
             <input
@@ -53,11 +53,11 @@ export default function Editor() {
               onChange={(e) => { setCanvasHeight(e.target.value) }}
             />
             <span>Height</span>
-            {errors.canvasHeight && <p>{errors.canvasHeight}</p>}
+            {errors.canvasHeight && <p id="warning">{errors.canvasHeight}</p>}
           </div>
         </div>
       )}
-      {errors.area && <p>{errors.area}</p>}
+      {errors.area && <p id="warning">{errors.area}</p>}
 
       <button onClick={initialize} className="button">{buttonText}</button>
       {hideOptions && (<Canvas width={canvasWidth} height={canvasHeight} />)}
