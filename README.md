@@ -8,6 +8,10 @@ This app is built with **React** and deployed to **Heroku**. The quick guide is 
 * **RESET:** It allows users to **reset** the width and height.
 
 ![](./public/demo1.png)    ![](./public/demo2.png)
+<p align="center">
+  <img src="./public/demo1.png">
+  <img src="./public/demo2.png">
+</p>
 
 <!--
 <img src="react_frontend/public/demo.png" width="50" height="25">  
