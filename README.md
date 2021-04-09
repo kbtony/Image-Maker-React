@@ -6,16 +6,18 @@ This app is built with **React** and deployed to **Heroku**. The quick guide is 
 * **Height:** It allows users to customize the **Height** of the image.
 * **CREATE IMAGE:** Generate an image based on user input data.
 * **RESET:** It allows users to **reset** the width and height.
-
-![](./public/demo1.png)    ![](./public/demo2.png)
 <p align="center">
   <img src="./public/demo1.png">
   <img src="./public/demo2.png">
 </p>
 
-<!--
-<img src="react_frontend/public/demo.png" width="50" height="25">  
--->
+## Error Handling
+Both
+<p align="center">
+  <img src="./public/demo3.png">
+  <img src="./public/demo4.png">
+  <img src="./public/demo5.png">
+</p>
 
 ## Directory Structure
 
