@@ -16,6 +16,7 @@ This app is built with **React** and deployed to **Heroku**. The quick guide is 
 ## Directory Structure
 
     Image-Maker-React
+    │
     ├── README.md
     │
     ├── src              
@@ -25,4 +26,4 @@ This app is built with **React** and deployed to **Heroku**. The quick guide is 
     │    └── components           # Component files
     │           
     └── public
-        └── index.html
+         └── index.html
