@@ -17,10 +17,8 @@ export default function Canvas(props) {
 
   // generate 2D array based on input height and width for storing colors
   let colors = new Array(height);
-  for (let i = 0; i < height; i++) {
-    colors[i] = new Array(width);
-  }
   for (let i = 0, k = 0; i < height; i++) {
+    colors[i] = new Array(width);
     for (let j = 0; j < width; j++) {
       colors[i][j] = colorPool[k++];
     }

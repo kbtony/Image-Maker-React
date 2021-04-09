@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import "../styles/editor.scss";
+import { useState } from 'react';
 import Canvas from "./canvas";
 
 export default function Editor() {
@@ -10,6 +10,10 @@ export default function Editor() {
   const [buttonText, setButtonText] = useState("Create Image");
 
   function initialize() {
+
+    // validat input
+    if (canvasWidth * canvasHeight != 32768) alert("Your age must be a number");
+
     setHideOptions(!hideOptions);
     setHideCanvas(!hideCanvas);
 
